@@ -1,0 +1,42 @@
+<router-outlet></router-outlet>
+<article>
+  <div class="container">
+    <div class="row">
+      <div id="accordion">
+
+        <div *ngFor="let playlist of playlists" class="card">
+
+          <div class="card-header">
+            <h5 class="mb-0" style="text-align: center;">
+              <button class="btn btn-link" data-toggle="collapse" [attr.aria-expanded]="false"
+                aria-controls="collapseExample">
+                {{ playlist.name }}
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapse{{ playlist.id }}" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col card" *ngFor="let video of playlist.videos" style="width: 18rem;">
+                  <img class="card-img-top" src={{video.imageurl}} alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ video.title }}</h5>
+                    <p class="card-text">{{ video.description }}</p>
+                    <a href={{video.url}} class="btn btn-primary">Watch</a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</article>
