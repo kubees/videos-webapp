@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="bootstrap.min.css">
-  <title>Video Catalog</title>
+  <title>Video Catalog V2</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
 
   <article>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Video Catalog: V2</span>
+    </nav>
     <div ng-app="videos" ng-controller="videosController" class="container">
       <div class="row">
         <div id="accordion">
@@ -68,7 +71,6 @@
     var model = {
       playlist: [],
     };
-
     var playlistApiUrl = "http://playlist-api.microservices"
     var app = angular.module('videos', []);
     app.controller('videosController', function ($scope, $http) {
